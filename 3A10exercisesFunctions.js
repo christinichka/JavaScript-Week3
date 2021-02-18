@@ -45,12 +45,66 @@ function makeDownwardStairs(height) {
 }
 // console.log(makeDownwardStairs(5));
 
-// F Write a function makeSpaceLine(numSpaces, numChars) that returns a line with exactly the specified number of spaces, followed by the specified number of hashes, followed again by numSpaces more spaces.
+// F. Write a function makeSpaceLine(numSpaces, numChars) that returns a line with exactly the specified number of spaces, followed by the specified number of hashes, followed again by numSpaces more spaces.
+
+// ***My original code
+// function makeSpaceLine(numSpaces, numChars) {
+//   let makeSpaceLine = '';
+
+//   for (let i = 0; i < numChars; i++) {
+//     makeSpaceLine += " ".repeat(3) + makeLine(numSpaces) + " ".repeat(3);
+//   }
+//   return makeSpaceLine
+// }
+// console.log(makeSpaceLine(5, 1));
+
+// Another way to make a space then a line
 function makeSpaceLine(numSpaces, numChars) {
-  let makeSpaceLine = '';
-  for (let i = 0; i < numChars; i++) {
-    makeSpaceLine += makeLine(numSpaces);
-  }
+  let makeSpaceLine = " ".repeat(numSpaces) + makeLine(numChars) + " ".repeat(numSpaces);
   return makeSpaceLine
 }
-console.log(makeSpaceLine(3,5));
+// console.log(makeSpaceLine(3, 5))
+
+// G. Write a function makeIsoscelesTriangle(height) that returns a triangle of the given height.
+
+// ***My Isosceles Triangle fuction
+// function makeIsoscelesTriangle(height) {
+//   for (let i = 0; i < height; i++) {
+//     let isotriangle = '';
+//     for (let j = 1; j < height-i; j++) {
+//       isotriangle = isotriangle + ' ';
+//     }
+//     for (let k = 1; k <= (2*i+1); k++) {
+//       isotriangle = isotriangle + '#';
+//     }
+//     console.log(isotriangle);
+//   }
+  // return makeIsoscelesTriangle
+// }
+// console.log(makeIsoscelesTriangle(5));
+
+// LaunchCode's Isosceles Triangle function
+function makeIsoscelesTriangle(height) {
+   let triangle = '';
+   for (let i = 0; i < height; i++) {
+      triangle += (makeSpaceLine(height - i - 1, 2*i + 1) + '\n');
+   }
+   return triangle.slice(0, -1);
+}
+// console.log(makeIsoscelesTriangle(5));
+
+
+// H. Write a function makeDiamond(height) that returns a diamond where the triangle formed by the top portion has the given height.
+function makeDiamond(height) {
+  let diamond = '';
+  for (let i = 0; i < height; i++) {
+    diamond += (makeIsoscelesTriangle(height) + makeIsoscelesTriangle(height).split().reverse().join());
+    return diamond
+  }
+}
+console.log(makeDiamond(5));
+
+
+
+
+// Bonus Mission - 
