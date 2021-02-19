@@ -6,7 +6,7 @@ function makeLine(size) {
   }
   return line;
 }
-// console.log(makeLine(5));
+console.log('\n' + makeLine(5));
 
 // B. Write a function called makeSquare(size) that returns a size by size string of hashes - return a single string that contains the entire shape.
 function makeSquare(size) {
@@ -26,14 +26,14 @@ function makeRectangle(width, height) {
   }
   return rectangle.slice(0,-1);
 }
-// console.log(makeRectangle(5 ,3));
+console.log(makeRectangle(5 ,3));
 
 // D. Rewrite makeSquare to use makeRectangle.
 function makeSquare(size) {
   let square = makeRectangle(size, size);
   return square; 
   }
-// console.log(makeSquare(5));
+console.log('\n' + makeSquare(5));
 
 // E. Write a function makeDownwardStairs(height) that prints the staircase pattern shown below, with the given height. 
 function makeDownwardStairs(height) {
@@ -43,7 +43,7 @@ function makeDownwardStairs(height) {
   }
   return downwardStairs.slice(0,-1);
 }
-// console.log(makeDownwardStairs(5));
+console.log('\n' + makeDownwardStairs(5));
 
 // F. Write a function makeSpaceLine(numSpaces, numChars) that returns a line with exactly the specified number of spaces, followed by the specified number of hashes, followed again by numSpaces more spaces.
 
@@ -63,7 +63,7 @@ function makeSpaceLine(numSpaces, numChars) {
   let makeSpaceLine = " ".repeat(numSpaces) + makeLine(numChars) + " ".repeat(numSpaces);
   return makeSpaceLine
 }
-// console.log(makeSpaceLine(3, 5))
+console.log('\n' + makeSpaceLine(3, 5))
 
 // G. Write a function makeIsoscelesTriangle(height) that returns a triangle of the given height.
 
@@ -91,20 +91,14 @@ function makeIsoscelesTriangle(height) {
    }
    return triangle.slice(0, -1);
 }
-// console.log(makeIsoscelesTriangle(5));
+console.log('\n' +makeIsoscelesTriangle(5));
 
 
 // H. Write a function makeDiamond(height) that returns a diamond where the triangle formed by the top portion has the given height.
 function makeDiamond(height) {
-  let diamond = '';
-  for (let i = 0; i < height; i++) {
-    diamond += (makeIsoscelesTriangle(height) + makeIsoscelesTriangle(height).split().reverse().join());
-    return diamond
+  return diamond = makeIsoscelesTriangle(height) + '\n' + makeIsoscelesTriangle(height).split('').reverse().join('');
   }
-}
-console.log(makeDiamond(5));
+console.log('\n' +makeDiamond(5));
 
 
-
-
-// Bonus Mission - 
+// Bonus Mission 
